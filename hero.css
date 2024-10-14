@@ -1,0 +1,314 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;  /* Modern font */
+    background-color: #f5f5f5;           /* Light grey background */
+    color: #333;                         /* Dark grey text */
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 0.5em;
+}
+
+nav ul li a:hover {
+    background-color: #ffcc00;
+    color: black;
+    border-radius: 5px;
+}
+
+/* Header */
+header {
+    background-color: #ffcc00;
+    color: black;
+    padding: 2em 0;
+    text-align: center;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 2em 0;
+}
+
+.hero img {
+    max-width: 50%;
+    height: auto;
+}
+
+.hero-text {
+    padding-left: 2em;
+    color: #333;
+}
+
+/* Services Section */
+.services {
+    padding: 2em;
+    background-color: white;
+    text-align: center;
+}
+
+.services h2 {
+    color: #ffcc00;
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.service-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 1.5em;
+}
+
+.service-item {
+    background-color: #f9f9f9;
+    padding: 1.5em;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-item i {
+    font-size: 2.5em;
+    color: #ffcc00;
+    margin-bottom: 0.5em;
+}
+
+.service-item h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.service-item p {
+    color: #666;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+}
+
+/* Contact Section */
+.contact {
+    padding: 2em;
+    background-color: #f5f5f5;
+    color: #333;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #ffcc00;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2em;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Contact Form (Left Side) */
+form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 400px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+input, textarea {
+    padding: 0.7em;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+}
+
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+button {
+    padding: 0.7em;
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* Call Us and Email Us Sections (Right Side) */
+.contact-info {
+    flex: 1;
+    max-width: 300px;
+}
+
+.call-us, .email-us {
+    padding: 1em;
+    background-color: #fff;
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+.call-us h3, .email-us h3 {
+    color: #ffcc00;
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+}
+
+.call-us p, .email-us p {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.call-us i, .email-us i {
+    color: #ffcc00;
+    margin-right: 0.5em;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 4em 2em;
+    background-color: #fff;
+    color: #333;
+}
+
+.about-us-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-us-image {
+    flex: 1;
+    padding: 1em;
+    text-align: center;
+}
+
+.about-us-image img {
+    max-width: 100%;
+    border: 5px solid #ffcc00;
+    border-radius: 10px;
+}
+
+.about-us-text {
+    flex: 2;
+    padding: 1em;
+}
+
+.about-us-text h2 {
+    font-size: 2.5em;
+    color: #ffcc00;
+    margin-bottom: 1em;
+}
+
+.about-us-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 1em;
+    color: #666;
+}
+
+/* Responsive About Us Section */
+@media (max-width: 1024px) {
+    .about-us-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-us-image {
+        margin-bottom: 2em;
+    }
+
+    .about-us-text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-us-text h2 {
+        font-size: 2em;
+    }
+
+    .about-us-text p {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-us-text h2 {
+        font-size: 1.8em;
+    }
+
+    .about-us-text p {
+        font-size: 1em;
+    }
+}
+
