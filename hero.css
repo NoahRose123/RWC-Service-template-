@@ -6,10 +6,11 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;  /* Modern font */
-    background-color: #f5f5f5;           /* Light grey background */
-    color: #333;                         /* Dark grey text */
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 /* Navigation Bar */
@@ -20,6 +21,9 @@ nav {
     justify-content: space-between;
     padding: 1em;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav .logo {
@@ -50,35 +54,94 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* Header */
-header {
-    background-color: #ffcc00;
-    color: black;
-    padding: 2em 0;
-    text-align: center;
-}
-
-header p {
-    font-size: 1.2em;
-}
-
-/* Hero Section */
+/* Vibrant Hero Section with Original Colors */
 .hero {
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: #f5f5f5;
-    padding: 2em 0;
-}
-
-.hero img {
-    max-width: 50%;
-    height: auto;
-}
-
-.hero-text {
-    padding-left: 2em;
+    justify-content: space-between;
+    padding: 2em;
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(to right, #f5f5f5, #ffcc00); /* Gradient background with original colors */
     color: #333;
+}
+
+/* Hero Text Styling */
+.hero-text {
+    max-width: 45%;
+}
+
+.hero-text h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2); /* Text shadow for better visibility */
+    color: #333; /* Original text color */
+}
+
+.hero-text p {
+    font-size: 1.5em;
+    margin-bottom: 1.2em;
+    color: #555; /* Slightly darker text color for contrast */
+}
+
+/* Call-to-Action Button */
+.hero-text .cta-btn {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.hero-text .cta-btn:hover {
+    background-color: #333;
+    color: #ffcc00;
+}
+
+/* Hero Image Styling - Enlarged */
+.hero-image {
+    max-width: 55%; /* Increased size */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);  /* Soft shadow */
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(1.05); /* Slight brightness increase for vibrancy */
+    transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);     /* Zoom effect on hover */
+    filter: brightness(1.15);   /* Slight brightness change on hover */
+}
+
+/* Responsive Hero Section for Smaller Screens */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        height: auto;  /* Adjust height for smaller screens */
+    }
+
+    .hero-text, .hero-image {
+        max-width: 100%;  /* Full width for both text and image */
+    }
+
+    .hero-text h1 {
+        font-size: 2.8em;
+    }
+
+    .hero-text p {
+        font-size: 1.2em;
+    }
 }
 
 /* Services Section */
@@ -105,7 +168,7 @@ header p {
     padding: 1.5em;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Added box-shadow transition */
 }
 
 .service-item i {
@@ -126,6 +189,7 @@ header p {
 
 .service-item:hover {
     transform: translateY(-10px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Stronger hover shadow */
 }
 
 /* Contact Section */
@@ -198,6 +262,11 @@ button {
 button:hover {
     background-color: #333;
     color: white;
+}
+
+button:focus {
+    outline: 2px solid #ffcc00;          /* Focus state for accessibility */
+    outline-offset: 2px;
 }
 
 /* Call Us and Email Us Sections (Right Side) */
@@ -311,4 +380,5 @@ button:hover {
         font-size: 1em;
     }
 }
+
 
