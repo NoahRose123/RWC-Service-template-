@@ -1,4 +1,3 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -13,6 +12,7 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Navigation Bar */
 /* Navigation Bar */
 nav {
     background-color: #000;
@@ -54,37 +54,98 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* Vibrant Hero Section with Original Colors */
+/* Hamburger Menu (Hidden by Default) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Responsive Navigation Menu */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 50%;
+        background-color: #000;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 2em 0;
+    }
+
+    nav ul.show {
+        transform: translateX(0); /* Slide-in the menu */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon on mobile screens */
+    }
+
+    /* Hamburger icon animations for open state */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -5px);
+    }
+}
+
+
+/* Hero Section */
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 2em;
-    height: 100vh; /* Full viewport height */
-    background: linear-gradient(to right, #f5f5f5, #ffcc00); /* Gradient background with original colors */
+    min-height: 100vh; /* Full viewport height */
+    background: linear-gradient(to right, #f5f5f5, #ffcc00);
     color: #333;
+    gap: 2em; /* Maintain space between text and image */
 }
 
 /* Hero Text Styling */
 .hero-text {
-    max-width: 45%;
+    max-width: 40%; /* Adjust to give more space to the image */
+    display: flex;
+    flex-direction: column; /* Stack text and button */
+    justify-content: center;
 }
 
 .hero-text h1 {
     font-size: 3.5em;
     font-weight: bold;
     margin-bottom: 0.5em;
-    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2); /* Text shadow for better visibility */
-    color: #333; /* Original text color */
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+    color: #333;
 }
 
 .hero-text p {
     font-size: 1.5em;
-    margin-bottom: 1.2em;
-    color: #555; /* Slightly darker text color for contrast */
+    margin-bottom: 1em; /* Reduced margin for smaller spacing */
+    color: #555;
 }
 
-/* Call-to-Action Button */
 .hero-text .cta-btn {
     background-color: #ffcc00;
     color: #333;
@@ -95,6 +156,7 @@ nav ul li a:hover {
     font-size: 1.2em;
     transition: background-color 0.3s ease;
     cursor: pointer;
+    margin-top: 0.5em; /* Reduced margin for closer button */
 }
 
 .hero-text .cta-btn:hover {
@@ -102,25 +164,25 @@ nav ul li a:hover {
     color: #ffcc00;
 }
 
-/* Hero Image Styling - Enlarged */
+/* Hero Image - Enlarged */
 .hero-image {
-    max-width: 55%; /* Increased size */
+    max-width: 55%;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);  /* Soft shadow */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .hero-image img {
     width: 100%;
     height: auto;
     display: block;
-    filter: brightness(1.05); /* Slight brightness increase for vibrancy */
+    filter: brightness(1.05);
     transition: transform 0.4s ease, filter 0.3s ease;
 }
 
 .hero-image img:hover {
-    transform: scale(1.05);     /* Zoom effect on hover */
-    filter: brightness(1.15);   /* Slight brightness change on hover */
+    transform: scale(1.05); /* Zoom effect */
+    filter: brightness(1.15);
 }
 
 /* Responsive Hero Section for Smaller Screens */
@@ -128,11 +190,12 @@ nav ul li a:hover {
     .hero {
         flex-direction: column;
         text-align: center;
-        height: auto;  /* Adjust height for smaller screens */
+        padding: 2em 1em;
+        gap: 1em; /* Maintain space between text and image */
     }
 
     .hero-text, .hero-image {
-        max-width: 100%;  /* Full width for both text and image */
+        max-width: 100%; /* Full width for both text and image */
     }
 
     .hero-text h1 {
@@ -141,8 +204,18 @@ nav ul li a:hover {
 
     .hero-text p {
         font-size: 1.2em;
+        margin-bottom: 0.8em; /* Reduce margin between paragraph and button */
+    }
+
+    .hero-text .cta-btn {
+        margin-top: 0.3em; /* Bring button closer to text */
+    }
+
+    .hero-image {
+        margin-top: 0.5em; /* Reduce space between image and button */
     }
 }
+
 
 /* Services Section */
 .services {
@@ -380,5 +453,4 @@ button:focus {
         font-size: 1em;
     }
 }
-
 

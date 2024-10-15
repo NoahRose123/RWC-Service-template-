@@ -7,17 +7,35 @@
     <title>Plumbing Services</title>
     <link rel="stylesheet" href="hero.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+    
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+    
+
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav>
         <div class="logo">Plumbing Co.</div>
-        <ul>
+        <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
+    
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -27,7 +45,7 @@
             <a href="#contact" class="cta-btn">Contact Us Now</a> <!-- New Call-to-Action Button -->
         </div>
         <div class="hero-image">
-            <img src="yellowplumber.png" alt="Plumber at work">
+            <img src="yellowplumber-transformed.jpeg">
         </div>
     </section>
 
