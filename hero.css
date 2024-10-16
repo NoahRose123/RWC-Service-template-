@@ -1,20 +1,29 @@
+/* Global Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Professional Font Styles */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Using Roboto for a more professional look */
     background-color: #f5f5f5;
     color: #333;
     line-height: 1.6;
     scroll-behavior: smooth;
 }
 
-/* Navigation Bar */
-/* Navigation Bar */
+/* Headings Font Style */
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500; /* Slightly lighter weight for modern, clean feel */
+    color: #333; /* Consistent color for headings */
+}
+
+/* Navigation Bar - Updated Font */
 nav {
+    font-family: 'Roboto', sans-serif; /* Apply Roboto to navbar */
     background-color: #000;
     color: #fff;
     display: flex;
@@ -34,6 +43,7 @@ nav .logo {
 nav ul {
     list-style: none;
     display: flex;
+    margin-left: auto;
 }
 
 nav ul li {
@@ -54,64 +64,6 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* Hamburger Menu (Hidden by Default) */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 4px 0;
-    transition: 0.4s;
-}
-
-/* Responsive Navigation Menu */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100vh;
-        width: 50%;
-        background-color: #000;
-        transform: translateX(100%);
-        transition: transform 0.4s ease-in-out;
-        justify-content: center;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 2em 0;
-    }
-
-    nav ul.show {
-        transform: translateX(0); /* Slide-in the menu */
-    }
-
-    .hamburger {
-        display: flex; /* Show hamburger icon on mobile screens */
-    }
-
-    /* Hamburger icon animations for open state */
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 5px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -5px);
-    }
-}
-
-
 /* Hero Section */
 .hero {
     display: flex;
@@ -121,28 +73,28 @@ nav ul li a:hover {
     min-height: 100vh; /* Full viewport height */
     background: linear-gradient(to right, #f5f5f5, #ffcc00);
     color: #333;
-    gap: 2em; /* Maintain space between text and image */
+    gap: 2em;
 }
 
 /* Hero Text Styling */
 .hero-text {
-    max-width: 40%; /* Adjust to give more space to the image */
+    max-width: 40%;
     display: flex;
-    flex-direction: column; /* Stack text and button */
+    flex-direction: column;
     justify-content: center;
 }
 
 .hero-text h1 {
-    font-size: 3.5em;
-    font-weight: bold;
+    font-size: 3.2em;
+    font-weight: 500; /* Lighter for a cleaner look */
     margin-bottom: 0.5em;
     text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
     color: #333;
 }
 
 .hero-text p {
-    font-size: 1.5em;
-    margin-bottom: 1em; /* Reduced margin for smaller spacing */
+    font-size: 1.3em;
+    margin-bottom: 1em;
     color: #555;
 }
 
@@ -152,11 +104,10 @@ nav ul li a:hover {
     padding: 1em 2em;
     border: none;
     border-radius: 5px;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 1.2em;
     transition: background-color 0.3s ease;
     cursor: pointer;
-    margin-top: 0.5em; /* Reduced margin for closer button */
 }
 
 .hero-text .cta-btn:hover {
@@ -164,7 +115,7 @@ nav ul li a:hover {
     color: #ffcc00;
 }
 
-/* Hero Image - Enlarged */
+/* Hero Image */
 .hero-image {
     max-width: 55%;
     border-radius: 15px;
@@ -181,67 +132,36 @@ nav ul li a:hover {
 }
 
 .hero-image img:hover {
-    transform: scale(1.05); /* Zoom effect */
+    transform: scale(1.05);
     filter: brightness(1.15);
 }
-
-/* Responsive Hero Section for Smaller Screens */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 2em 1em;
-        gap: 1em; /* Maintain space between text and image */
-    }
-
-    .hero-text, .hero-image {
-        max-width: 100%; /* Full width for both text and image */
-    }
-
-    .hero-text h1 {
-        font-size: 2.8em;
-    }
-
-    .hero-text p {
-        font-size: 1.2em;
-        margin-bottom: 0.8em; /* Reduce margin between paragraph and button */
-    }
-
-    .hero-text .cta-btn {
-        margin-top: 0.3em; /* Bring button closer to text */
-    }
-
-    .hero-image {
-        margin-top: 0.5em; /* Reduce space between image and button */
-    }
-}
-
 
 /* Services Section */
 .services {
     padding: 2em;
-    background-color: white;
+    background: linear-gradient(45deg, #ffffff, #f7f7f7);
     text-align: center;
 }
 
 .services h2 {
     color: #ffcc00;
     font-size: 2em;
-    margin-bottom: 1em;
+    margin-bottom: 1.2em;
 }
 
 .service-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5em;
 }
 
 .service-item {
-    background-color: #f9f9f9;
+    background-color: #f0f0f0;
     padding: 1.5em;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Added box-shadow transition */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-top: 5px solid #ffcc00;
 }
 
 .service-item i {
@@ -251,18 +171,45 @@ nav ul li a:hover {
 }
 
 .service-item h3 {
-    font-size: 1.5em;
+    font-size: 1.6em;
     color: #333;
     margin-bottom: 0.5em;
 }
 
 .service-item p {
     color: #666;
+    font-size: 1.1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5em;
 }
 
+/* Refined Button Styling - Subtle and Light */
+.service-item a {
+    display: inline-block;
+    margin-top: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: #f5f5f5; /* Subtle background */
+    color: #333;
+    padding: 0.7em 1.5em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.service-item a:hover {
+    background-color: #ffcc00;
+    color: #333;
+}
+
+/* Service Item Hover Effects */
 .service-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Stronger hover shadow */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-item:hover p {
+    border-bottom-color: #333;
 }
 
 /* Contact Section */
@@ -335,11 +282,6 @@ button {
 button:hover {
     background-color: #333;
     color: white;
-}
-
-button:focus {
-    outline: 2px solid #ffcc00;          /* Focus state for accessibility */
-    outline-offset: 2px;
 }
 
 /* Call Us and Email Us Sections (Right Side) */
@@ -418,6 +360,37 @@ button:focus {
     color: #666;
 }
 
+/* Responsive Hero Section for Smaller Screens */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2em 1em;
+        gap: 1em;
+    }
+
+    .hero-text, .hero-image {
+        max-width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 2.8em;
+    }
+
+    .hero-text p {
+        font-size: 1.2em;
+        margin-bottom: 0.8em;
+    }
+
+    .hero-text .cta-btn {
+        margin-top: 0.3em;
+    }
+
+    .hero-image {
+        margin-top: 0.5em;
+    }
+}
+
 /* Responsive About Us Section */
 @media (max-width: 1024px) {
     .about-us-container {
@@ -434,23 +407,5 @@ button:focus {
     }
 }
 
-@media (max-width: 768px) {
-    .about-us-text h2 {
-        font-size: 2em;
-    }
 
-    .about-us-text p {
-        font-size: 1.1em;
-    }
-}
-
-@media (max-width: 480px) {
-    .about-us-text h2 {
-        font-size: 1.8em;
-    }
-
-    .about-us-text p {
-        font-size: 1em;
-    }
-}
 
