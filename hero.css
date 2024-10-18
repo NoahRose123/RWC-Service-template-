@@ -126,6 +126,7 @@ nav ul li a:hover {
     display: block;
     filter: brightness(1.05);
     transition: transform 0.4s ease, filter 0.3s ease;
+    justify-content: space-around;
 }
 
 .hero-image img:hover {
@@ -546,4 +547,25 @@ footer .rights {
         font-size: 1em;
     }
 }
+
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5em; /* Reduce the gap between text and image */
+        padding: 1em; /* Less padding for compact layout */
+    }
+
+    .hero-text .cta-btn {
+        margin-bottom: 0.5em; /* Bring button closer to image */
+        padding: 0.8em 1.5em;
+    }
+
+    .hero-image {
+        max-width: 90%;
+        margin-top: 0.5em; /* Less gap between button and image */
+    }
+}
+
 
