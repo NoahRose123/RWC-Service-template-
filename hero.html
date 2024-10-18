@@ -7,18 +7,7 @@
     <title>Plumbing Services</title>
     <link rel="stylesheet" href="hero.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-    
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-            hamburger.classList.toggle('active');
-        });
-    </script>
-    
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -27,7 +16,7 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#about-us">About</a></li> <!-- New About Link -->
+            <li><a href="#about-us">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="hamburger">
@@ -36,20 +25,20 @@
             <span></span>
         </div>
     </nav>
-    
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-text">
             <h1>Professional Plumbing Services</h1>
             <p>Your trusted local plumber for all plumbing needs</p>
-            <a href="#contact" class="cta-btn">Contact Us Now</a> <!-- New Call-to-Action Button -->
+            <a href="#contact" class="cta-btn">Contact Us Now</a>
         </div>
         <div class="hero-image">
-            <img src="yellowplumber-transformed.jpeg">
+            <img src="plumber2.png" alt="Plumber fixing pipes">
         </div>
     </section>
 
+    <!-- Services Section -->
     <section class="services" id="services">
         <h2>Our Plumbing Services</h2>
         <div class="service-items">
@@ -57,36 +46,33 @@
                 <i class="fas fa-wrench"></i>
                 <h3>Leak Repairs</h3>
                 <p>Quick and efficient repairs to fix any water leaks.</p>
-                <a href="#contact" class="contact-link">Contact Us</a> <!-- Contact Link -->
+                <a href="#contact" class="contact-link">Contact Us</a>
             </div>
             <div class="service-item">
                 <i class="fas fa-tools"></i>
                 <h3>Pipe Installation</h3>
                 <p>Professional pipe installations for homes and businesses.</p>
-                <a href="#contact" class="contact-link">Contact Us</a> <!-- Contact Link -->
+                <a href="#contact" class="contact-link">Contact Us</a>
             </div>
             <div class="service-item">
                 <i class="fas fa-phone-volume"></i>
                 <h3>Emergency Services</h3>
                 <p>Available 24/7 for any plumbing emergencies.</p>
-                <a href="#contact" class="contact-link">Contact Us</a> <!-- Contact Link -->
+                <a href="#contact" class="contact-link">Contact Us</a>
             </div>
             <div class="service-item">
                 <i class="fas fa-shower"></i>
                 <h3>Water Heater Repair</h3>
                 <p>Get your water heaters fixed or replaced with expert care.</p>
-                <a href="#contact" class="contact-link">Contact Us</a> <!-- Contact Link -->
+                <a href="#contact" class="contact-link">Contact Us</a>
             </div>
-    
         </div>
     </section>
-    
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2>Contact Us</h2>
         <div class="contact-container">
-            <!-- Contact Form on the Left -->
             <form id="contactForm">
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -114,12 +100,12 @@
             <!-- Call Us and Email Us Section on the Right -->
             <div class="contact-info">
                 <div class="call-us">
-                    <h3>Or Call Us</h3>
-                    <p><i class="fas fa-phone-volume"></i> +1 (555) 123-4567</p>
+                    <h3>Call Us</h3>
+                    <p  id="mailcell"><i class="fas fa-phone-volume"></i> +1 (555) 123-4567</p>
                 </div>
                 <div class="email-us">
-                    <h3>Or Email Us</h3>
-                    <p><i class="fas fa-envelope"></i> plumber@gmail.com</p>
+                    <h3>Email Us</h3>
+                    <p id="mailcell"><i class="fas fa-envelope"></i> plumber@gmail.com</p>
                 </div>
             </div>
         </div>
@@ -133,18 +119,30 @@
             </div>
             <div class="about-us-text">
                 <h2>About Us</h2>
-                <p>
-                    Welcome to our plumbing services! With over 20 years of experience, we provide top-notch plumbing solutions for residential and commercial properties. Our team of certified and skilled plumbers is dedicated to ensuring the highest quality service for all your plumbing needs. We specialize in repairs, installations, and maintenance of all types of plumbing systems, offering efficient and reliable solutions.
-                </p>
-                <p>
-                    We pride ourselves on our customer-first approach and are committed to providing prompt, professional, and affordable services. Contact us today to learn more about how we can help with your plumbing requirements!
-                </p>
+                <p>With over 20 years of experience, we provide top-notch plumbing solutions for homes and businesses. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, minus. Fugit ratione dolores alias minima officiis quod aperiam veniam debitis eligendi quisquam, sunt, sit dolor in? Nisi harum laboriosam enim?</p>
             </div>
         </div>
     </section>
 
-    <!-- Font Awesome for service icons -->
+    <!-- Footer Section -->
+    <footer>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank">
+            <i class="fab fa-facebook-f" id="facebook"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank">
+            <i class="fab fa-instagram" id="instagram"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank">
+            <i class="fab fa-twitter" id="twitter"></i>
+          </a>
+        </div>
+        <p>Created by RoseWebCreations</p>
+        <p class="rights">&copy; 2024 All rights reserved.</p>
+      </footer>
+    <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="hero.js"></script>
 </body>
 </html>
+
+
