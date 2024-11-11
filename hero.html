@@ -4,13 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Plumbing Services</title>
-    <link rel="stylesheet" href="hero.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* Styles for mobile dropdown */
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header and Navigation */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1em 2em;
+            background-color: #A91F24;
+            color: white;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 1.5em;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Mobile Navigation */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -18,7 +65,6 @@
             width: 25px;
             height: 25px;
             cursor: pointer;
-            z-index: 1001;
         }
 
         .hamburger span {
@@ -27,45 +73,31 @@
             background-color: white;
         }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            margin-left: auto;
-        }
-
-        .nav-links li {
-            margin-left: 2em;
-        }
-
-        /* Hide dropdown by default */
+        /* Dropdown menu for mobile */
         .dropdown {
             display: none;
-            position: absolute;
+            flex-direction: column;
             top: 60px;
             right: 0;
-            background-color: #27285C;
+            background-color: #A91F24;
             width: 100%;
-            padding: 1em 0;
             text-align: center;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            text-align:right;
-            padding-right:20px;
-        }
-
-        .dropdown.show {
-            display: block;
+            z-index: 999;
         }
 
         .dropdown a {
             color: white;
+            padding: 1em;
             text-decoration: none;
             font-weight: bold;
-            display: block;
-            padding: 10px;
-            font-size: 1em;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* Responsive adjustments */
+        .dropdown a:hover {
+            background-color: #902020;
+        }
+
+        /* Show dropdown on small screens */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -74,12 +106,279 @@
             .hamburger {
                 display: flex;
             }
+
+            .dropdown.show {
+                display: flex;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1em;
+            padding: 10em 2em;
+            background-image: url('phc1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 51, 102, 0.7);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            font-weight: 600;
+            margin-bottom: 0.3em;
+            text-align:center;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            max-width: 500px;
+            line-height: 1.6;
+            text-align:center;
+            margin-left:60px;
+        }
+
+        .cta-btn {
+            background-color: #A91F24;
+            color: white;
+            padding: 0.8em 1.5em;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 1em;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            background-color: #902020;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5em 2em;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .services h2 {
+            margin-bottom: 1em;
+            color: #A91F24;
+        }
+
+        .service-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5em;
+            justify-content: space-around;
+        }
+
+        .service-item {
+            background: #fff;
+            padding: 1.5em;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 250px;
+            transition: transform 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-item i {
+            font-size: 2em;
+            color: #A91F24;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 3em 2em;
+            background-color: #f4f4f4;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 1em;
+            color: #003366;
+        }
+
+        .contact-content {
+            display: flex;
+            gap: 2em;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 1em;
+            flex-wrap: wrap;
+        }
+
+        .contact-form, .contact-info {
+            background: #fff;
+            padding: 1.5em;
+            border-radius: 4px;
+            flex: 1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1em;
+            text-align: left;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.3em;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.5em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 0.7em;
+            background-color: #003366;
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1em;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            height: 200px;
+        }
+
+        /* Stack contact section cards on mobile */
+        @media (max-width: 768px) {
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+
+      
+
+        /* Customer Reviews Section */
+        .reviews {
+            padding: 2em;
+            background-color: #f9f9f9;
+            text-align: center;
+            margin-bottom:10px;
+        }
+
+        .reviews h2 {
+            color: #003366;
+            margin-bottom: 1em;
+        }
+
+        .review-cards {
+            display: flex;
+            gap: 1.5em;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .review-card {
+            background: #fff;
+            padding: 1.5em;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 250px;
+            text-align: left;
+            display: flex;
+            gap: 1em;
+        }
+
+        .review-card p {
+            font-style: italic;
+            margin-bottom: 0.5em;
+        }
+
+        .review-card h4 {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .review-card a {
+            color: #003366;
+            text-decoration: underline;
+            font-size: 0.9em;
+        }
+
+        .review-card img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        footer {
+            padding: 1em;
+            background-color:#003366;
+            color: white;
+            text-align: center;
+        }
+
+        .social-icons a {
+            margin: 0 0.5em;
+            color: white;
         }
     </style>
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav>
         <div class="logo">Plumbing Co.</div>
         <ul class="nav-links">
@@ -88,7 +387,6 @@
             <li><a href="#about-us">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <!-- Hamburger Icon -->
         <div class="hamburger" onclick="toggleDropdown()">
             <span></span>
             <span></span>
@@ -96,7 +394,7 @@
         </div>
     </nav>
 
-    <!-- Mobile Dropdown Menu -->
+    <!-- Dropdown Menu for Mobile -->
     <div class="dropdown" id="dropdown">
         <a href="#home">Home</a>
         <a href="#services">Services</a>
@@ -104,15 +402,20 @@
         <a href="#contact">Contact</a>
     </div>
 
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById("dropdown");
+            dropdown.classList.toggle("show");
+        }
+    </script>
+
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-text">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
             <h1>Professional Plumbing Services</h1>
             <p>Your trusted local plumber for all plumbing needs</p>
-            <a href="#contact" class="cta-btn">Contact Us Now</a>
-        </div>
-        <div class="hero-image">
-            <img src="plumber2.png" alt="Plumber fixing pipes">
+            <a href="#contact" class="cta-btn">CALL NOW</a>
         </div>
     </section>
 
@@ -124,25 +427,21 @@
                 <i class="fas fa-wrench"></i>
                 <h3>Leak Repairs</h3>
                 <p>Quick and efficient repairs to fix any water leaks.</p>
-                <a href="#contact" class="contact-link">Contact Us</a>
             </div>
             <div class="service-item">
                 <i class="fas fa-tools"></i>
                 <h3>Pipe Installation</h3>
                 <p>Professional pipe installations for homes and businesses.</p>
-                <a href="#contact" class="contact-link">Contact Us</a>
             </div>
             <div class="service-item">
                 <i class="fas fa-phone-volume"></i>
                 <h3>Emergency Services</h3>
                 <p>Available 24/7 for any plumbing emergencies.</p>
-                <a href="#contact" class="contact-link">Contact Us</a>
             </div>
             <div class="service-item">
                 <i class="fas fa-shower"></i>
                 <h3>Water Heater Repair</h3>
                 <p>Get your water heaters fixed or replaced with expert care.</p>
-                <a href="#contact" class="contact-link">Contact Us</a>
             </div>
         </div>
     </section>
@@ -150,85 +449,89 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2>Contact Us</h2>
-        <div class="contact-container">
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
+        <div class="contact-content">
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-
-                <button type="submit">Send Message</button>
-            </form>
-
-            <!-- Call Us and Email Us Section on the Right -->
             <div class="contact-info">
-                <div class="call-us">
-                    <h3>Call Us</h3>
-                    <p id="mailcell"><i class="fas fa-phone-volume"></i> +1 (555) 123-4567</p>
+                <div>
+                    <i class="fas fa-phone-volume"></i> +1 (555) 123-4567
                 </div>
-                <div class="email-us">
-                    <h3>Email Us</h3>
-                    <p id="mailcell"><i class="fas fa-envelope"></i> plumber@gmail.com</p>
+                <div>
+                    <i class="fas fa-envelope"></i> plumber@example.com
+                </div>
+                <div>
+                    <i class="fas fa-clock"></i> Monday - Friday: 9:00 AM - 6:00 PM
+                </div>
+                <div>
+                    <i class="fas fa-clock"></i> Saturday - Sunday: 10:00 AM - 4:00 PM
+                </div>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d184151.127953071!2d-80.06302618991764!3d43.25572190841956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c9b691e5f97bb%3A0x5d9b1b704a7a3d3e!2sHamilton%2C%20ON%2C%20Canada!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section class="about-us" id="about-us">
-        <div class="about-us-container">
-            <div class="about-us-image">
-                <img src="th.png" alt="Plumber at work">
+    <!-- Customer Reviews Section -->
+    <section class="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review-cards">
+            <div class="review-card">
+                <img src="lady.png" alt="Customer 1">
+                <div>
+                    <p>"Great service! They arrived on time and fixed the drain issue quickly."</p>
+                    <h4>- Kesiha Long</h4>
+                    <a href="#">Read full review</a>
+                </div>
             </div>
-            <div class="about-us-text">
-                <h2>About Us</h2>
-                <p>With over 20 years of experience, we provide top-notch plumbing solutions for homes and businesses. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, minus. Fugit ratione dolores alias minima officiis quod aperiam veniam debitis eligendi quisquam, sunt, sit dolor in? Nisi harum laboriosam enim?</p>
+            <div class="review-card">
+                <img src="dog.jfif" alt="Customer 2">
+                <div>
+                    <p>"Professional and reliable. Will call them again if needed. Did a good job."</p>
+                    <h4>- Sarah W.</h4>
+                    <a href="#">Read full review</a>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="hudsonrose.png" alt="Customer 3">
+                <div>
+                    <p>"Excellent work on our new pipe installation. Highly recommend!"</p>
+                    <h4>- Markus Tassieli</h4>
+                    <a href="#">Read full review</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
         <div class="social-icons">
-            <a href="https://facebook.com" target="_blank">
-                <i class="fab fa-facebook-f" id="facebook"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank">
-                <i class="fab fa-instagram" id="instagram"></i>
-            </a>
-            <a href="https://twitter.com" target="_blank">
-                <i class="fab fa-twitter" id="twitter"></i>
-            </a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
-        <p>Created by RoseWebCreations</p>
-        <p class="rights">&copy; 2024 All rights reserved.</p>
+        <p>&copy; 2024 Plumbing Co. All rights reserved.</p>
     </footer>
-
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script>
-        function toggleDropdown() {
-            const dropdown = document.getElementById("dropdown");
-            dropdown.classList.toggle("show");
-        }
-    </script>
 </body>
 
 </html>
-
 
